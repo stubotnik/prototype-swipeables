@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	
+	<title>Swipeable example</title>
+	
+	<link rel="stylesheet" href="style.css" />
+
+	<script src="prototype.js"></script>
+	<script src="swipeable.js"></script>
+	
+	<script>
+		document.observe("dom:loaded", function () {
+			
+			var swipeMe = $("swipeMe");
+			
+			new Swipeable(swipeMe);
+			
+			swipeMe.observe("swipe:up", function () {console.log("swiped up");});
+			swipeMe.observe("swipe:down", function () {console.log("swiped down");});
+			swipeMe.observe("swipe:left", function () {console.log("swiped left");});
+			swipeMe.observe("swipe:right", function () {console.log("swiped right");});
+		});
+	
+	</script>
+	
+</head>
+<body>
+	
+	<div id="swipeMe">
+	
+	</div>
+</body>
+</html>		
+
+
